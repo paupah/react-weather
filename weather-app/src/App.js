@@ -58,8 +58,7 @@ function App () {
 	const [query, setQuery] = useState(null);
 
 	const getWeather = () => {
-		const key = '318f23e98ef94568f2ef09d989743573';
-		const url = `https://api.openweathermap.org/data/2.5/weather?q=${state}&units=imperial&appid=${key}`;
+		const url = `${process.env.REACT_APP_API_URL}/weather?q=${state}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
 		console.log(url, 'url');
 
 		fetch(url)
